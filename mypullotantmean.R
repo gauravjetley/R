@@ -1,7 +1,7 @@
 pollutantmean <- function (directory, pollutant, id = 1:332) {
     #setwd(dir = paste(directory,sep="")
     #meandata <- matrix()
-        
+    x<-1    
     #Looping through the files
     for (i in id){    
         
@@ -13,7 +13,8 @@ pollutantmean <- function (directory, pollutant, id = 1:332) {
         
         #Adding means of files in temp
         temp <- read.csv(file = j, head = TRUE, sep = ",")
-        meandata[i] <- mean(temp$sulfate, na.rm = TRUE)
+        meandata[x] <- mean(temp$nitrate, na.rm = TRUE)
+        x<-x+1
     }
     
     mean(meandata)
